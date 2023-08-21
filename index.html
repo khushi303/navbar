@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        @media (max-width:992px) {
+
+            .mobile_view {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                min-height: 100vh;
+                background-color: aqua;
+                transition: 300ms linear;
+            }
+
+            .overflow_hidden {
+                overflow: hidden;
+            }
+
+            .hamburger1,
+            .hamburger2,
+            .hamburger3 {
+                width: 30px;
+                min-height: 3px;
+                background-color: red;
+                transition: 300ms linear;
+            }
+
+            .cross .hamburger1 {
+                transform: rotate(50deg) translate(19px, 18px);
+            }
+
+            .cross .hamburger2 {
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+
+            .cross .hamburger3 {
+                transform: rotate(-50deg) translateY(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="">
+    <nav>
+        <div class="d-flex justify-content-between">
+            <h1>logo</h1>
+            <ul id="navbar"
+                class="d-flex list-unstyled gap-5 mobile_view justify-content-center align-items-center flex-column flex-lg-row">
+                <li>
+                    <a onclick="openNav()" href="#home">home</a>
+                </li>
+                <li>
+                    <a href="">about</a>
+                </li>
+                <li>
+                    <a href="">service</a>
+                </li>
+                <li>
+                    <a href="">faq</a>
+                </li>
+                <li>
+                    <a href="">home</a>
+                </li>
+                <li>
+                    <a onclick="closeNav()" href="">close</a>
+                </li>
+            </ul>
+
+            <div id="hamburger-icon" onclick="openNav()" class="d-lg-none z-3 pe-2 pt-2">
+                <div class="hamburger1"></div>
+                <div class="hamburger2 my-2"></div>
+                <div class="hamburger3"></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="min-vh-100 bg-danger"></div>
+    <div id="home" class="min-vh-100 bg-warning"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("navbar").classList.toggle("start-0");
+            document.body.classList.toggle("overflow_hidden");
+            document.getElementById("hamburger-icon").classList.toggle("cross")
+        }
+        // function closeNav() {
+        //     document.getElementById("navbar").classList.remove("start-0")
+        // }
+    </script>
+</body>
+
+</html>
